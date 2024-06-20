@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Divider } from '@mui/material';
+import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, ListItemText, Divider, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link as RouterLink } from 'react-router-dom';
 import { styled } from '@mui/system';
+import Logo from '../images/Logo.jpeg'; // Correct path to the image
 
 // Create a styled component for the desktop menu
 const DesktopMenu = styled('div')(({ theme }) => ({
@@ -29,15 +30,16 @@ const Header: React.FC = () => {
         }} 
         elevation={0}
       >
-        <Toolbar sx={{ maxWidth: '1200px', margin: '0 auto', width: '100%', minHeight: '80px', padding: '0 16px' }}>
-          <Typography
-            variant="h6"
-            component={RouterLink}
-            to="/"
-            sx={{ flexGrow: 1, textDecoration: 'none', color: 'inherit' }}
-          >
-            My App
-          </Typography>
+        <Toolbar sx={{ maxWidth: '1200px', margin: '0 auto', width: '100%', minHeight: '90px !important', padding: '0 16px' }}>
+          <Box sx={{ flexGrow: 1 }}>
+            <RouterLink to="/" style={{ textDecoration: 'none' }}>
+              <img
+                src={Logo} 
+                alt="My App"
+                style={{ height: '60px', width: 'auto' }} 
+              />
+            </RouterLink>
+          </Box>
           <DesktopMenu>
             <Button 
               color="inherit" 
