@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { Container, Box, Typography, Link } from '@mui/material';
+import { Container, Box, Typography, Link, useMediaQuery, useTheme } from '@mui/material';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
@@ -12,6 +12,9 @@ const images = [
 ];
 
 const Home: React.FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   const settings = {
     dots: true,
     infinite: true,
@@ -29,16 +32,24 @@ const Home: React.FC = () => {
           <Box key={index} component="img" src={img} alt={`Slide ${index + 1}`} sx={{ width: '100%', height: 'auto' }} />
         ))}
       </Slider>
-      <Container sx={{ mt: 4, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', py: 6 }}>
-        <Box sx={{ flex: 1, mx: 2 }}>
+      <Container 
+        sx={{ 
+          mt: 4, 
+          display: 'flex', 
+          flexDirection: isMobile ? 'column' : 'row', 
+          justifyContent: 'space-between', 
+          py: 6 
+        }}
+      >
+        <Box sx={{ flex: 1, mx: 2, mb: isMobile ? 2 : 0 }}>
           <Typography variant="h6" gutterBottom>SERVICES</Typography>
           {/* <Typography variant="h6">Residential Architecture</Typography>
           <Typography variant="h6">Commercial Architecture</Typography>
           <Typography variant="h6">Retail Architecture</Typography> */}
         </Box>
-        <Box sx={{ flex: 1, mx: 2 }}>
+        <Box sx={{ flex: 1, mx: 2, mb: isMobile ? 2 : 0 }}>
           <Typography variant="h6" gutterBottom>CONTACT</Typography>
-          {/* <Typography >Ashwin Architects</Typography>
+          {/* <Typography>Ashwin Architects</Typography>
           <Typography>23, Ratna Vilas Rd, Basavanagudi,</Typography>
           <Typography>Bengaluru, Karnataka 560004, India</Typography>
           <Typography>Call: +91 (702) 6524524</Typography>
