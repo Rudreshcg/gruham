@@ -30,7 +30,7 @@ const Header: React.FC = () => {
         }} 
         elevation={0}
       >
-        <Toolbar sx={{ maxWidth: '1200px', margin: '0 auto', width: '100%', minHeight: '90px !important', padding: '0 16px' }}>
+        <Toolbar sx={{ maxWidth: '1200px', margin: '0 auto', width: '100%', minHeight: '90px !important', padding: '0px' }}>
           <Box sx={{ flexGrow: 1 }}>
             <RouterLink to="/" style={{ textDecoration: 'none' }}>
               <img

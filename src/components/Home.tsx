@@ -12,8 +12,7 @@ const images = [
 ];
 
 const Home: React.FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  
 
   const settings = {
     dots: true,
@@ -40,38 +39,6 @@ const Home: React.FC = () => {
           ))}
         </Slider>
       </div>
-      <Container 
-        maxWidth="lg" 
-        sx={{ 
-          mt: 4, 
-          display: 'flex', 
-          flexDirection: isMobile ? 'column' : 'row', 
-          justifyContent: 'space-between', 
-          py: 6,
-          px: 2
-        }}
-      >
-        <Box sx={{ flex: 1, mx: 2, mb: isMobile ? 2 : 0 }}>
-          <Typography variant="h6" gutterBottom>SERVICES</Typography>
-          {/* <Typography variant="h6">Residential Architecture</Typography>
-          <Typography variant="h6">Commercial Architecture</Typography>
-          <Typography variant="h6">Retail Architecture</Typography> */}
-        </Box>
-        <Box sx={{ flex: 1, mx: 2, mb: isMobile ? 2 : 0 }}>
-          <Typography variant="h6" gutterBottom>CONTACT</Typography>
-          {/* <Typography>Ashwin Architects</Typography>
-          <Typography>23, Ratna Vilas Rd, Basavanagudi,</Typography>
-          <Typography>Bengaluru, Karnataka 560004, India</Typography>
-          <Typography>Call: +91 (702) 6524524</Typography>
-          <Typography>Email: info@ashwinarchitects.com</Typography> */}
-        </Box>
-        <Box sx={{ flex: 1, mx: 2 }}>
-          <Typography variant="h6" gutterBottom>CONNECT</Typography>
-          <Link href="https://www.facebook.com" target="_blank" rel="noopener" sx={{ display: 'block', textDecoration: 'none', color: 'textSecondary' }}>Facebook</Link>
-          <Link href="https://www.instagram.com" target="_blank" rel="noopener" sx={{ display: 'block', textDecoration: 'none', color: 'textSecondary' }}>Instagram</Link>
-          <Link href="https://www.youtube.com" target="_blank" rel="noopener" sx={{ display: 'block', textDecoration: 'none', color: 'textSecondary' }}>YouTube</Link>
-        </Box>
-      </Container>
     </div>
   );
 };
