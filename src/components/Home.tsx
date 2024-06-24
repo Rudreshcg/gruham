@@ -26,19 +26,29 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div>
-      <Slider {...settings}>
-        {images.map((img, index) => (
-          <Box key={index} component="img" src={img} alt={`Slide ${index + 1}`} sx={{ width: '100%', height: 'auto' }} />
-        ))}
-      </Slider>
+    <div style={{ width: '100%', overflowX: 'hidden' }}>
+      <div style={{ width: '100%', overflow: 'hidden' }}>
+        <Slider {...settings}>
+          {images.map((img, index) => (
+            <Box 
+              key={index} 
+              component="img" 
+              src={img} 
+              alt={`Slide ${index + 1}`} 
+              sx={{ width: '100%', height: 'auto', display: 'block' }} 
+            />
+          ))}
+        </Slider>
+      </div>
       <Container 
+        maxWidth="lg" 
         sx={{ 
           mt: 4, 
           display: 'flex', 
           flexDirection: isMobile ? 'column' : 'row', 
           justifyContent: 'space-between', 
-          py: 6 
+          py: 6,
+          px: 2
         }}
       >
         <Box sx={{ flex: 1, mx: 2, mb: isMobile ? 2 : 0 }}>
