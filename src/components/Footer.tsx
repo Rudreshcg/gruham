@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
         }}
       >
         <Box sx={{ flex: 1, mx: 2, mb: isMobile ? 2 : 0 }}>
-          <Typography variant="h6" sx={{ mb: 4 }}>
+          <Typography variant="body1" sx={{ mb: 4 }}>
             <strong>SERVICES</strong>
           </Typography>
           <Typography sx={{ mb: 0.5 }}>Residential Construction</Typography>
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
           <Typography sx={{ mb: 0.5 }}>Retail Construction</Typography>
         </Box>
         <Box sx={{ flex: 1, mx: 2, mb: isMobile ? 2 : 0 }}>
-          <Typography variant="h6" sx={{ mb: 4 }}>
+          <Typography variant="body1" sx={{ mb: 4 }}>
             <strong>CONTACT</strong>
           </Typography>
           {/* <Typography>Ashwin Architects</Typography>
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
           <Typography>Email: info@ashwinarchitects.com</Typography> */}
         </Box>
         <Box sx={{ flex: 1, mx: 2 }}>
-          <Typography variant="h6" sx={{ mb: 4 }}>
+          <Typography variant="body1" sx={{ mb: 4 }}>
             <strong>CONNECT</strong>
           </Typography>
           <Link href="https://www.facebook.com" target="_blank" rel="noopener" sx={{ display: 'block', textDecoration: 'none', color: 'textSecondary' }}>Facebook</Link>
