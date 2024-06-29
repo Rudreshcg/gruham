@@ -17,8 +17,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <Box sx={{ width: '100%', py: 9, backgroundColor: 'white', minHeight: '100vh', px: isMobile ? 3 : 0 }}>
-      <Grid container spacing={2} justifyContent="space-between" alignItems="center">
+    <Box sx={{ width: '100%', py: 9, backgroundColor: 'white', minHeight: '100vh'}}>
+      <Grid container spacing={2} justifyContent="space-between" alignItems="flex-start" sx={{px: isMobile ? 3 : 0 }}>
         <Grid item xs={12} md={7} lg={6} sx={{ textAlign: 'center' }}>
           <Typography variant="h5" sx={{ mb: 2 }}>
             <strong>Gruham</strong>
@@ -122,7 +122,7 @@ const Contact: React.FC = () => {
               </FormControl>
               <FormControl fullWidth required>
                 <FormLabel sx={{ textAlign: 'left' }}>Your Message</FormLabel>
-                <TextField variant="outlined" fullWidth multiline rows={4} />
+                <TextField variant="outlined" fullWidth multiline rows={6} />
               </FormControl>
               <Button
                 variant="contained"
