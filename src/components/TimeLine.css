@@ -1,200 +1,77 @@
 .timeline-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Adjust alignment as needed */
+  justify-content: space-between;
+  padding: 12rem 1rem;
+  overflow-x: auto;
   position: relative;
-  padding: 2rem 0;
-  overflow-x: auto; /* Enable horizontal scrolling */
   white-space: nowrap;
-  width: 100%; /* Ensure full width */
+
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #ddd;
+  z-index: 1;
 }
 
 .timeline-item {
-  display: inline-block;
-  text-align: center;
   position: relative;
-  margin: 0 1rem;
+  width: 150px;
+  text-align: center;
+  z-index: 2;
 }
 
-.timeline-year {
-  font-size: 1.2rem;
-  color: #8b5e34;
-  margin-bottom: 0.5rem;
-}
-
-.timeline-content {
-  font-size: 1rem;
-  color: #333;
-}
-
-.timeline-item:before {
-  content: '';
+.timeline-item.top .timeline-content {
   position: absolute;
-  top: -2rem;
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
+  margin-bottom: 1rem;
+}
+
+.timeline-item.bottom .timeline-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+}
+
+.timeline-dot {
   width: 12px;
   height: 12px;
   background-color: #8b5e34;
   border-radius: 50%;
   border: 2px solid #fff;
-}
-
-.timeline-item:nth-child(even):after {
-  content: '';
   position: absolute;
-  top: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 2px;
-  height: calc(100% - 4rem);
-  background-color: #8b5e34;
-}
-
-.timeline-item:nth-child(odd):after {
-  content: '';
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: calc(100% - 4rem);
-  background-color: #8b5e34;
-}
-
-.timeline-nav-button {
-  background-color: #fff;
-  border: 2px solid #897455;
-  border-radius: 50px;
-  box-sizing: border-box;
-  box-shadow: none;
-  cursor: pointer;
-  display: block;
-  height: 40px;
-  outline: 0;
-  position: absolute;
-  text-indent: -9999px;
-  transform: translateY(-50%);
   top: 50%;
-  width: 40px;
-  z-index: 10;
-}
-
-.timeline-nav-button--prev {
-  left: 0;
-}
-
-.timeline-nav-button--next {
-  right: 0;
-}
-
-.timeline-divider {
-  background-color: #ddd;
-  display: block;
-  height: 4px;
-  left: 40px;
-  position: absolute;
-  transform: translateY(-50%);
-  right: 40px;
-  z-index: 1;
-}
-.timeline-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Adjust alignment as needed */
-  position: relative;
-  padding: 2rem 0;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  white-space: nowrap;
-  width: 100%; /* Ensure full width */
-}
-
-.timeline-item {
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  margin: 0 1rem;
-}
-
-.timeline-year {
-  font-size: 1.2rem;
-  color: #8b5e34;
-  margin-bottom: 0.5rem;
+  margin-top: -6px;
+  z-index: 2;
 }
 
 .timeline-content {
-  font-size: 1rem;
-  color: #333;
-}
-
-.timeline-item:before {
-  content: '';
-  position: absolute;
-  top: -2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 12px;
-  height: 12px;
-  background-color: #8b5e34;
-  border-radius: 50%;
-  border: 2px solid #fff;
-}
-
-.timeline-item:nth-child(even):after {
-  content: '';
-  position: absolute;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: calc(100% - 4rem);
-  background-color: #8b5e34;
-}
-
-.timeline-item:nth-child(odd):after {
-  content: '';
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: calc(100% - 4rem);
-  background-color: #8b5e34;
-}
-
-.timeline-nav-button {
   background-color: #fff;
-  border: 2px solid #897455;
-  border-radius: 50px;
-  box-sizing: border-box;
-  box-shadow: none;
-  cursor: pointer;
-  display: block;
-  height: 40px;
-  outline: 0;
-  position: absolute;
-  text-indent: -9999px;
-  transform: translateY(-50%);
-  top: 50%;
-  width: 40px;
-  z-index: 10;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.timeline-nav-button--prev {
-  left: 0;
+.timeline-year {
+  font-weight: bold;
 }
 
-.timeline-nav-button--next {
-  right: 0;
+.timeline-info {
+  margin-top: 0.5rem;
 }
 
-.timeline-divider {
-  background-color: #ddd;
-  display: block;
-  height: 4px;
-  left: 40px;
-  position: absolute;
-  transform: translateY(-50%);
-  right: 40px;
-  z-index: 1;
+.timeline-name,
+.timeline-location,
+.timeline-sqft {
+  margin: 0.25rem 0;
 }
