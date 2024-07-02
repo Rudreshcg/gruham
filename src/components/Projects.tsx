@@ -1,12 +1,14 @@
-import { Box, Typography, Link } from '@mui/material';
+import { Box, Typography, Link, useTheme, useMediaQuery } from '@mui/material';
 import React from 'react';
 import TimelineComponent from './TimeLine';
 
 
 const Projects: React.FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <Box sx={{ width: '100%' }}>
-      <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', gap: 2, p: 2 }}>
+      <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'space-between', gap: 2, p: 2 }}>
         <Box sx={{ position: 'relative', flex: 1 }}>
           <img src="https://via.placeholder.com/1200x600?text=Image+1" alt="Residential" style={{ width: '100%', height: 'auto' }} />
           <Typography
@@ -47,7 +49,7 @@ const Projects: React.FC = () => {
         </Box>
       </Box>
       <Box sx={{ mt: 4 }}>
-        <Typography variant="h5" sx={{ mb: 2 }}>Completed Projects</Typography>
+        <Typography variant="h5" sx={{ mb: 2, textAlign: 'center' }}>COMPLETED PROJECTS</Typography>
         <TimelineComponent />
       </Box>
     </Box>
