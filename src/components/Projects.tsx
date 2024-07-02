@@ -1,6 +1,6 @@
 import { Box, Typography, Link } from '@mui/material';
 import React from 'react';
-import HorizontalTimeline from './TimeLine';
+import TimelineComponent from './TimeLine';
 
 
 const Projects: React.FC = () => {
@@ -48,7 +48,7 @@ const Projects: React.FC = () => {
       </Box>
       <Box sx={{ mt: 4 }}>
         <Typography variant="h5" sx={{ mb: 2 }}>Completed Projects</Typography>
-        <HorizontalTimeline />
+        <TimelineComponent />
       </Box>
     </Box>
   );
