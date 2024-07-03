@@ -6,9 +6,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 // Sample images for the carousel
 const images = [
-  'https://via.placeholder.com/1200x600?text=Image+1',
-  'https://via.placeholder.com/1200x600?text=Image+2',
-  'https://via.placeholder.com/1200x600?text=Image+3'
+  'https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/best-interior-designers-in-bangalore.jpg.webp',
+  'https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp',
+  'https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/best-bangalore-architects.jpg.webp',
+  'https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp'
 ];
 
 const Home: React.FC = () => {
@@ -17,11 +18,11 @@ const Home: React.FC = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000
+    autoplaySpeed: 2500
   };
 
   return (
