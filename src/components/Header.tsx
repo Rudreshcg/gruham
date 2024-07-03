@@ -41,6 +41,21 @@ const Header: React.FC = () => {
             </RouterLink>
           </Box>
           <DesktopMenu>
+          <Button 
+              color="inherit" 
+              component={RouterLink} 
+              to="/" 
+              sx={{ 
+                color: '#4b4f58', 
+                p: "16px 24px",
+                '&:hover': {
+                  color: 'blue', 
+                  backgroundColor: 'inherit' 
+                } 
+              }}
+            >
+              HOME
+            </Button>
             <Button 
               color="inherit" 
               component={RouterLink} 
@@ -55,21 +70,6 @@ const Header: React.FC = () => {
               }}
             >
               PROJECTS
-            </Button>
-            <Button 
-              color="inherit" 
-              component={RouterLink} 
-              to="/videos" 
-              sx={{ 
-                color: '#4b4f58', 
-                p: "16px 24px",
-                '&:hover': {
-                  color: 'blue', 
-                  backgroundColor: 'inherit' 
-                } 
-              }}
-            >
-              VIDEOS
             </Button>
             <Button 
               color="inherit" 
@@ -122,11 +122,11 @@ const Header: React.FC = () => {
         sx={{ display: { xs: 'block', md: 'none' } }}
       >
         <List sx={{ width: 250 }}>
+        <ListItem button component={RouterLink} to="/" onClick={toggleDrawer(false)}>
+            <ListItemText primary="HOME" />
+          </ListItem>
           <ListItem button component={RouterLink} to="/projects" onClick={toggleDrawer(false)}>
             <ListItemText primary="PROJECTS" />
-          </ListItem>
-          <ListItem button component={RouterLink} to="/videos" onClick={toggleDrawer(false)}>
-            <ListItemText primary="VIDEOS" />
           </ListItem>
           <ListItem button component={RouterLink} to="/about" onClick={toggleDrawer(false)}>
             <ListItemText primary="ABOUT" />

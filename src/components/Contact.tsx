@@ -19,11 +19,11 @@ const Contact: React.FC = () => {
   return (
     <Box sx={{ width: '100%', py: 9, backgroundColor: 'white', minHeight: '100vh'}}>
       <Grid container spacing={2} justifyContent="space-between" alignItems="flex-start" sx={{px: isMobile ? 3 : 0 }}>
-        <Grid item xs={12} md={7} lg={6} sx={{ textAlign: 'center' }}>
+        <Grid item xs={12} md={7} lg={6} sx={{ textAlign: 'center', padding: '50px !important' }}>
           <Typography variant="h5" sx={{ mb: 2 }}>
             <strong>Gruham</strong>
           </Typography>
-
+          <Box sx={{textAlign: 'left'}}>
           <Box sx={{ height: '50px' }} aria-hidden="true" />
           <Box>
             
@@ -60,6 +60,8 @@ const Contact: React.FC = () => {
               
             </Typography>
           </Box>
+          </Box>
+          
         </Grid>
         <Grid item xs={12} md={5} sx={{ textAlign: 'center' }}>
           <Box>
