@@ -18,11 +18,14 @@ const Contact: React.FC = () => {
 
   return (
     <Box sx={{ width: '100%', py: 9, backgroundColor: 'white', minHeight: '100vh'}}>
-      <Grid container spacing={2} justifyContent="space-between" alignItems="flex-start" sx={{px: isMobile ? 3 : 0 }}>
-        <Grid item xs={12} md={7} lg={6} sx={{ textAlign: 'center', padding: '50px !important' }}>
-          <Typography variant="h5" sx={{ mb: 2 }}>
+      <Grid container spacing={2} justifyContent="center" alignItems="flex-start" sx={{ flexDirection: { xs: 'column', md: 'row' }, rowGap: 2, columnGap: 2, maxWidth: '1200px', mx: 'auto' }}>
+      <Grid item xs={12} md={7} lg={6} sx={{ textAlign: 'center', padding: '50px !important' }}>
+        <Box sx={{textAlign: 'left'}}>
+        <Typography variant="h5" sx={{ mb: 2 }}>
             <strong>Gruham</strong>
           </Typography>
+        </Box>
+          
           <Box sx={{textAlign: 'left'}}>
           <Box sx={{ height: '50px' }} aria-hidden="true" />
           <Box>
