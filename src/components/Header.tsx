@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Button, IconButton, Drawer, List, ListItem, ListItemText, Divider, Box } from '@mui/material';
+import { AppBar, Toolbar, Button, IconButton, List, ListItem, ListItemText, Divider, Box, Collapse } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import { Link as RouterLink } from 'react-router-dom';
 import { styled } from '@mui/system';
 import Logo from '../images/Logo.jpeg'; // Correct path to the image
@@ -16,8 +17,8 @@ const DesktopMenu = styled('div')(({ theme }) => ({
 const Header: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const toggleDrawer = (open: boolean) => () => {
-    setDrawerOpen(open);
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
   };
 
   return (
@@ -31,7 +32,7 @@ const Header: React.FC = () => {
         elevation={0}
       >
         <Toolbar sx={{ maxWidth: '1200px', margin: '0 auto', width: '100%', minHeight: '90px !important', padding: '0px' }}>
-          <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ flexGrow: 1, px: 1 }}>
             <RouterLink to="/" style={{ textDecoration: 'none' }}>
               <img
                 src={Logo} 
@@ -41,7 +42,7 @@ const Header: React.FC = () => {
             </RouterLink>
           </Box>
           <DesktopMenu>
-          <Button 
+            <Button 
               color="inherit" 
               component={RouterLink} 
               to="/" 
@@ -107,35 +108,43 @@ const Header: React.FC = () => {
             color="inherit" 
             aria-label="menu" 
             sx={{ display: { xs: 'block', md: 'none' } }}
-            onClick={toggleDrawer(true)}
+            onClick={toggleDrawer}
           >
-            <MenuIcon />
+            {drawerOpen ? <CloseIcon /> : <MenuIcon />}
           </IconButton>
         </Toolbar>
         <Divider sx={{ width: '100%' }} />
       </AppBar>
 
-      <Drawer 
-        anchor="left" 
-        open={drawerOpen} 
-        onClose={toggleDrawer(false)}
-        sx={{ display: { xs: 'block', md: 'none' } }}
-      >
-        <List sx={{ width: 250 }}>
-        <ListItem button component={RouterLink} to="/" onClick={toggleDrawer(false)}>
-            <ListItemText primary="HOME" />
-          </ListItem>
-          <ListItem button component={RouterLink} to="/projects" onClick={toggleDrawer(false)}>
-            <ListItemText primary="PROJECTS" />
-          </ListItem>
-          <ListItem button component={RouterLink} to="/about" onClick={toggleDrawer(false)}>
-            <ListItemText primary="ABOUT" />
-          </ListItem>
-          <ListItem button component={RouterLink} to="/contact" onClick={toggleDrawer(false)}>
-            <ListItemText primary="CONTACT" />
-          </ListItem>
-        </List>
-      </Drawer>
+      <Collapse in={drawerOpen}>
+        <Box 
+          sx={{ 
+            width: '100%', 
+            position: 'absolute', 
+            backgroundColor: 'white',
+            zIndex: 1,
+            boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)'
+          }}
+        >
+          <List>
+            <ListItem button component={RouterLink} to="/" onClick={toggleDrawer}>
+              <ListItemText primary="HOME" />
+            </ListItem>
+            <ListItem button component={RouterLink} to="/projects" onClick={toggleDrawer}>
+              <ListItemText primary="PROJECTS" />
+            </ListItem>
+            <ListItem button component={RouterLink} to="/about" onClick={toggleDrawer}>
+              <ListItemText primary="ABOUT" />
+            </ListItem>
+            <ListItem button component={RouterLink} to="/contact" onClick={toggleDrawer}>
+              <ListItemText primary="CONTACT" />
+            </ListItem>
+          </List>
+        </Box>
+      </Collapse>
+
+      <Box sx={{ marginTop: drawerOpen ? '25vh' : 0 }}>
+      </Box>
     </>
   );
 };

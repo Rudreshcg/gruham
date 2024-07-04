@@ -1,6 +1,7 @@
 import { Box, Typography, Link, useTheme, useMediaQuery } from '@mui/material';
 import React from 'react';
 import TimelineComponent from './TimeLine';
+import ProjectStatus from './ProjectStatus';
 
 
 const Projects: React.FC = () => {
@@ -9,10 +10,10 @@ const Projects: React.FC = () => {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'space-between', gap: 2, p: 2 }}>
-        <Box sx={{ position: 'relative', flex: 1 }}>
-          <img src="https://via.placeholder.com/1200x600?text=Image+1" alt="Residential" style={{ width: '100%', height: 'auto' }} />
+        <Box sx={{ position: 'relative', flex: 1}}>
+          <img src="https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp"  alt="Residential" style={{ width: '100%', height: 'auto' }} />
           <Typography
-            variant="h4"
+            variant="h5"
             sx={{
               position: 'absolute',
               top: '50%',
@@ -28,10 +29,10 @@ const Projects: React.FC = () => {
             </Link>
           </Typography>
         </Box>
-        <Box sx={{ position: 'relative', flex: 1 }}>
-          <img src="https://via.placeholder.com/1200x600?text=Image+2" alt="Commercial" style={{ width: '100%', height: 'auto' }} />
+        <Box sx={{ position: 'relative', flex: 1}}>
+          <img src="https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp" alt="Commercial" style={{ width: '100%', height: 'auto'  }} />
           <Typography
-            variant="h4"
+            variant="h5"
             sx={{
               position: 'absolute',
               top: '50%',
@@ -47,6 +48,9 @@ const Projects: React.FC = () => {
             </Link>
           </Typography>
         </Box>
+      </Box>
+      <Box>
+        <ProjectStatus/>
       </Box>
       <Box sx={{ mt: 4 }}>
         <Typography variant="h5" sx={{ mb: 2, textAlign: 'center' }}>COMPLETED PROJECTS</Typography>
