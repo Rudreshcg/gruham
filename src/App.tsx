@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import Projects from './components/Projects';
-import Videos from './components/Videos';
 import About from './components/About';
 import Contact from './components/Contact';
-import Footer from './components/Footer'; // Import Footer component
+import Footer from './components/Footer';
+import Residential from './components/Residential'
 
 const App: React.FC = () => {
   return (
@@ -17,6 +17,7 @@ const App: React.FC = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/residential" element={<Residential/>} />
       </Routes>
       <Footer />
     </Router>

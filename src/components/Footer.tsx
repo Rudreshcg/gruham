@@ -9,7 +9,6 @@ const Footer: React.FC = () => {
       <Container
         maxWidth="lg"
         sx={{
-          mt: 4,
           display: 'flex',
           flexDirection: isMobile ? 'column' : 'row',
           justifyContent: 'space-between',
@@ -21,19 +20,19 @@ const Footer: React.FC = () => {
           <Typography variant="body1" sx={{ mb: 4 }}>
             <strong>SERVICES</strong>
           </Typography>
-          <Typography sx={{ mb: 0.5 }}>Residential Construction</Typography>
-          <Typography sx={{ mb: 0.5 }}>Commercial Construction</Typography>
-          <Typography sx={{ mb: 0.5 }}>Retail Construction</Typography>
+          <Typography variant='body2' sx={{ mb: 0.5 }}>Residential Construction</Typography>
+          <Typography variant='body2' sx={{ mb: 0.5 }}>Commercial Construction</Typography>
+          <Typography variant='body2' sx={{ mb: 0.5 }}>Retail Construction</Typography>
         </Box>
         <Box sx={{ flex: 1, mx: 2, mb: isMobile ? 2 : 0 }}>
           <Typography variant="body1" sx={{ mb: 4 }}>
             <strong>CONTACT</strong>
           </Typography>
-          {/* <Typography>Ashwin Architects</Typography>
-          <Typography>23, Ratna Vilas Rd, Basavanagudi,</Typography>
-          <Typography>Bengaluru, Karnataka 560004, India</Typography>
-          <Typography>Call: +91 (702) 6524524</Typography>
-          <Typography>Email: info@ashwinarchitects.com</Typography> */}
+          <Typography variant='body2' sx={{ mb: 0.5 }}>Gruham</Typography>
+          {/* <Typography>23, Ratna Vilas Rd, Basavanagudi,</Typography>
+          <Typography>Bengaluru, Karnataka 560004, India</Typography> */}
+          <Typography variant='body2' sx={{ mb: 0.5 }}>Call: +919663051609</Typography>
+          <Typography variant='body2' sx={{ mb: 0.5 }}>Email: info@gruham.in</Typography>
         </Box>
         <Box sx={{ flex: 1, mx: 2 }}>
           <Typography variant="body1" sx={{ mb: 4 }}>

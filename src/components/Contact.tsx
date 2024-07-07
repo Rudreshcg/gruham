@@ -17,51 +17,57 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <Box sx={{ width: '100%', py: 9, backgroundColor: 'white', minHeight: '100vh'}}>
-      <Grid container spacing={2} justifyContent="space-between" alignItems="flex-start" sx={{px: isMobile ? 3 : 0 }}>
+    <Box sx={{ width: '100%', py: 9, backgroundColor: 'white', minHeight: '100vh' }}>
+      <Grid container spacing={2} justifyContent="center" alignItems="flex-start" sx={{ flexDirection: { xs: 'column', md: 'row' }, rowGap: 2, columnGap: 2, maxWidth: '1200px', width: '100%', mx: 'auto' }}>
         <Grid item xs={12} md={7} lg={6} sx={{ textAlign: 'center', padding: '50px !important' }}>
-          <Typography variant="h5" sx={{ mb: 2 }}>
-            <strong>Gruham</strong>
-          </Typography>
-          <Box sx={{textAlign: 'left'}}>
-          <Box sx={{ height: '50px' }} aria-hidden="true" />
-          <Box>
+          <Box sx={{ textAlign: 'left' }}>
+            <Typography variant="h5" sx={{ mb: 2 }}>
+              <strong>Gruham</strong>
+            </Typography>
+          </Box>
+
+          <Box sx={{ textAlign: 'left' }}>
+            <Box sx={{ height: '50px' }} aria-hidden="true" />
+            <Box>
+
+            </Box>
             
-          </Box>
-          <Typography variant="body1" sx={{ mb: 2 }}>
-            <strong>Office Location:</strong>
-          </Typography>
-          <Box sx={{ mb: 2 }}>
+            <Box sx={{ mb: 2 }}>
+            <Typography variant="body1" sx={{ mb: 2 }}>
+              <strong>Office Location:</strong>
+            </Typography>
+            </Box>
+            <Box sx={{ mb: 2 }}>
+              <Typography variant="body1" sx={{ mb: 1 }}>
+                <strong>Contact Number</strong>
+              </Typography>
+              <Typography variant="body2" sx={{ display: 'block' }}>
+                <Link href="tel:+919663051609" sx={{ color: '#3366ff' }}>
+                  +919663051609
+                </Link>
+              </Typography>
+            </Box>
             
-          </Box>
-          <Typography variant="body1" sx={{ mb: 2 }}>
-            <strong>Contact Number</strong>
-          </Typography>
-          <Box sx={{ mb: 2 }}>
-            <Typography variant="body1" sx={{ display: 'block' }}>
-              <Link href="tel:+919663051609" sx={{ color: '#3366ff' }}>
-                +919663051609
-              </Link>
+            <Box sx={{ mb: 2 }}>
+            <Typography variant="body1" sx={{ mb: 1 }}>
+              <strong>Project Enquiries</strong>
             </Typography>
-          </Box>
-          <Typography variant="body1" sx={{ mb: 2 }}>
-            <strong>Project Enquiries</strong>
-          </Typography>
-          <Box sx={{ mb: 2 }}>
-            <Typography variant="body1" sx={{ display: 'block' }}>
-              
+              <Typography variant="body1" sx={{ display: 'block' }}>
+              <Link href="mailto:info@gruham.in" sx={{ color: '#3366ff' }}>
+                  info@gruham.in
+                </Link>
+              </Typography>
+            </Box>
+            <Typography variant="body1">
+              <strong>Career Opportunities</strong>
             </Typography>
+            <Box>
+              <Typography variant="body1" sx={{ display: 'block' }}>
+
+              </Typography>
+            </Box>
           </Box>
-          <Typography variant="body1">
-            <strong>Career Opportunities</strong>
-          </Typography>
-          <Box>
-            <Typography variant="body1" sx={{ display: 'block' }}>
-              
-            </Typography>
-          </Box>
-          </Box>
-          
+
         </Grid>
         <Grid item xs={12} md={5} sx={{ textAlign: 'center' }}>
           <Box>

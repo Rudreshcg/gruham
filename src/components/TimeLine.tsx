@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { ReactNode, FC } from 'react';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
 import { Typography, Box } from '@mui/material';
 import { styled } from '@mui/system';
+import { useInView } from 'react-intersection-observer';
 import './TimeLine.css';
 
 const projects = [
@@ -34,7 +35,6 @@ const CustomTimelineDot = styled(TimelineDot)(({ theme }) => ({
   backgroundColor: '#fff',
   padding: '5px',
   border: '5px solid #8d6748',
-  // margin: '0px'
 }));
 
 const CustomTimelineConnector = styled(TimelineConnector)(({ theme }) => ({
@@ -46,44 +46,52 @@ const CustomTimelineContent = styled(TimelineContent)(({ theme }) => ({
   paddingBottom: theme.spacing(2),
 }));
 
-const CustomTimelineSeparator = styled(TimelineSeparator)(({theme}) => ({
-  marginTop: '20px'
-}))
+const CustomTimelineSeparator = styled(TimelineSeparator)(({ theme }) => ({
+  marginTop: '20px',
+}));
 
+interface LazyTimelineItemProps {
+  children: ReactNode;
+  isLastItem: boolean;
+}
 
-const TimelineComponent = () => {
+const LazyTimelineItem: FC<LazyTimelineItemProps> = ({ children, isLastItem }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <TimelineItem className={`custom-timeline-item ${inView ? 'fade-in' : 'fade-out'}`} ref={ref}>
+      <TimelineSeparator>
+        <CustomTimelineDot />
+        {!isLastItem && <CustomTimelineConnector />}
+      </TimelineSeparator>
+      <CustomTimelineContent>{children}</CustomTimelineContent>
+    </TimelineItem>
+  );
+};
+
+const TimelineComponent: FC = () => {
   return (
     <Box sx={{ maxWidth: '600px', margin: 'auto' }}>
       <Timeline position="right">
         {projects.map((project, projectIndex) => (
           <React.Fragment key={projectIndex}>
-            <TimelineItem className="custom-timeline-item">
-              <TimelineSeparator>
-                <CustomTimelineDot />
-                <CustomTimelineConnector />
-              </TimelineSeparator>
-              <CustomTimelineContent>
-                <Typography variant="h6" component="span" sx={{ color: '#8d6748', fontWeight: 'bold' }}>
-                  {project.year}
-                </Typography>
-              </CustomTimelineContent>
-            </TimelineItem>
+            <LazyTimelineItem isLastItem={false}>
+              <Typography variant="h6" component="span" sx={{ color: '#8d6748', fontWeight: 'bold' }}>
+                {project.year}
+              </Typography>
+            </LazyTimelineItem>
             {project.items.map((item, itemIndex) => {
-              const isLastItem =
-                projectIndex === projects.length - 1 && itemIndex === project.items.length - 1;
+              const isLastItem = projectIndex === projects.length - 1 && itemIndex === project.items.length - 1;
               return (
-                <TimelineItem className="custom-timeline-item" key={itemIndex}>
-                  <TimelineSeparator>
-                    <CustomTimelineDot />
-                    {!isLastItem && <CustomTimelineConnector />}
-                  </TimelineSeparator>
-                  <CustomTimelineContent>
-                    <Typography variant="h6" component="span" sx={{ fontWeight: 'bold' }}>
-                      {item.title}
-                    </Typography>
-                    <Typography>{item.location}</Typography>
-                  </CustomTimelineContent>
-                </TimelineItem>
+                <LazyTimelineItem key={itemIndex} isLastItem={isLastItem}>
+                  <Typography variant="h6" component="span" sx={{ fontWeight: 'bold' }}>
+                    {item.title}
+                  </Typography>
+                  <Typography>{item.location}</Typography>
+                </LazyTimelineItem>
               );
             })}
           </React.Fragment>
