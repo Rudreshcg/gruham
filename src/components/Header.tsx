@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Button, IconButton, List, ListItem, ListItemText, Divider, Box, Collapse } from '@mui/material';
+import { AppBar, Toolbar, Button, IconButton, List, ListItem, ListItemText, Divider, Box, Collapse, useMediaQuery, useTheme } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link as RouterLink } from 'react-router-dom';
 import { styled } from '@mui/system';
 import Logo from '../images/Logo.jpeg'; // Correct path to the image
 
-// Create a styled component for the desktop menu
 const DesktopMenu = styled('div')(({ theme }) => ({
   display: 'none',
   [theme.breakpoints.up('md')]: {
@@ -15,6 +14,9 @@ const DesktopMenu = styled('div')(({ theme }) => ({
 }));
 
 const Header: React.FC = () => {
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -37,7 +39,7 @@ const Header: React.FC = () => {
               <img
                 src={Logo} 
                 alt="My App"
-                style={{ height: '60px', width: 'auto' }} 
+                style={{ height: '60px', width: 'auto', paddingLeft: isMobile ? '12px' : '0px'}} 
               />
             </RouterLink>
           </Box>
@@ -107,7 +109,7 @@ const Header: React.FC = () => {
             edge="start" 
             color="inherit" 
             aria-label="menu" 
-            sx={{ display: { xs: 'block', md: 'none' } }}
+            sx={{ display: { xs: 'block', md: 'none', paddingRight: '12px' } }}
             onClick={toggleDrawer}
           >
             {drawerOpen ? <CloseIcon /> : <MenuIcon />}
