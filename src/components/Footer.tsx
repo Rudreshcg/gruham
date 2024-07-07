@@ -9,7 +9,6 @@ const Footer: React.FC = () => {
       <Container
         maxWidth="lg"
         sx={{
-          mt: 4,
           display: 'flex',
           flexDirection: isMobile ? 'column' : 'row',
           justifyContent: 'space-between',
