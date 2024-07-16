@@ -1,5 +1,6 @@
 import { Box, Typography, TextField, Button, FormControlLabel, Checkbox, FormGroup, FormControl, FormLabel, useMediaQuery, useTheme, Grid, Link } from '@mui/material';
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
   const theme = useTheme();
@@ -8,12 +9,48 @@ const Contact: React.FC = () => {
     plot30x40: false,
     largerArea: false
   });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    contactNo: '',
+    city: '',
+    message: ''
+  });
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPlot({
       ...plot,
       [event.target.name]: event.target.checked
     });
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      contactNo: formData.contactNo,
+      city: formData.city,
+      plot30x40: plot.plot30x40 ? 'Yes' : 'No',
+      largerArea: plot.largerArea ? 'Yes' : 'No',
+      message: formData.message
+    };
+
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams, 'YOUR_USER_ID')
+      .then((response) => {
+        console.log('Email sent successfully!', response.status, response.text);
+        alert('Email sent successfully!');
+      }, (error) => {
+        console.error('Failed to send email.', error);
+        alert('Failed to send email.');
+      });
   };
 
   return (
@@ -76,6 +113,7 @@ const Contact: React.FC = () => {
             </Typography>
             <Box
               component="form"
+              onSubmit={handleSubmit}
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -89,19 +127,19 @@ const Contact: React.FC = () => {
             >
               <FormControl fullWidth required>
                 <FormLabel sx={{ textAlign: 'left' }}>Your Name</FormLabel>
-                <TextField variant="outlined" fullWidth />
+                <TextField variant="outlined" fullWidth name="name" value={formData.name} onChange={handleChange} />
               </FormControl>
               <FormControl fullWidth required>
                 <FormLabel sx={{ textAlign: 'left' }}>Your Email</FormLabel>
-                <TextField variant="outlined" type="email" fullWidth />
+                <TextField variant="outlined" type="email" fullWidth name="email" value={formData.email} onChange={handleChange} />
               </FormControl>
               <FormControl fullWidth required>
                 <FormLabel sx={{ textAlign: 'left' }}>Contact No.</FormLabel>
-                <TextField variant="outlined" type="tel" fullWidth />
+                <TextField variant="outlined" type="tel" fullWidth name="contactNo" value={formData.contactNo} onChange={handleChange} />
               </FormControl>
               <FormControl fullWidth required>
                 <FormLabel sx={{ textAlign: 'left' }}>Your City</FormLabel>
-                <TextField variant="outlined" fullWidth />
+                <TextField variant="outlined" fullWidth name="city" value={formData.city} onChange={handleChange} />
               </FormControl>
               <FormControl required>
                 <FormLabel sx={{ textAlign: 'left' }}>Select One</FormLabel>
@@ -130,7 +168,7 @@ const Contact: React.FC = () => {
               </FormControl>
               <FormControl fullWidth required>
                 <FormLabel sx={{ textAlign: 'left' }}>Your Message</FormLabel>
-                <TextField variant="outlined" fullWidth multiline rows={6} />
+                <TextField variant="outlined" fullWidth multiline rows={6} name="message" value={formData.message} onChange={handleChange} />
               </FormControl>
               <Button
                 variant="contained"
