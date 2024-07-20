@@ -1,6 +1,6 @@
 import { Box, Typography, TextField, Button, FormControlLabel, Checkbox, FormGroup, FormControl, FormLabel, useMediaQuery, useTheme, Grid, Link, Snackbar, Alert, FormHelperText } from '@mui/material';
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
+import axios from 'axios';
 
 const Contact: React.FC = () => {
   const theme = useTheme();
@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const newErrors = {
       name: !formData.name,
@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
       return;
     }
 
-    const templateParams = {
+    const data = {
       name: formData.name,
       email: formData.email,
       contactNo: formData.contactNo,
@@ -95,15 +95,17 @@ const Contact: React.FC = () => {
       message: formData.message
     };
 
-    emailjs.send('service_goxqknd', 'template_ieizmai', templateParams, 'e_2X_ItNtfL0hqJH3')
-      .then((response) => {
-        console.log('Email sent successfully!', response.status, response.text);
-        setSnackbar({ open: true, message: 'Email sent successfully!', severity: 'success' });
-        resetForm(); // Reset form after successful email send
-      }, (error) => {
-        console.error('Failed to send email.', error);
-        setSnackbar({ open: true, message: 'Failed to send email.', severity: 'error' });
-      });
+    const url = 'https://script.google.com/macros/s/AKfycbwKYPsvw2qFCnbsc9Y40AwPAmakbrWzyFy3TJXoCZcNUl1bd6vI9Kg_N3-rm9cXcErN/exec';
+
+    try {
+      const response = await axios.post(url, null, { params: data });
+      console.log('Data submitted successfully!', response.data);
+      setSnackbar({ open: true, message: 'Data submitted successfully!', severity: 'success' });
+      resetForm(); // Reset form after successful submission
+    } catch (error) {
+      console.error('Failed to submit data.', error);
+      setSnackbar({ open: true, message: 'Failed to submit data.', severity: 'error' });
+    }
   };
 
   const handleCloseSnackbar = () => {
