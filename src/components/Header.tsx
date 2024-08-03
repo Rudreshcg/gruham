@@ -14,7 +14,6 @@ const DesktopMenu = styled('div')(({ theme }) => ({
 }));
 
 const Header: React.FC = () => {
-
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -145,7 +144,7 @@ const Header: React.FC = () => {
         </Box>
       </Collapse>
 
-      <Box sx={{ marginTop: drawerOpen ? '25vh' : 0 }}>
+      <Box sx={{ marginTop: drawerOpen ? '32vh' : 0 }}>
       </Box>
     </>
   );
