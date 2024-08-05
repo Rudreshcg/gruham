@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
       <Grid container spacing={2} justifyContent="center" alignItems="flex-start" sx={{ flexDirection: { xs: 'column', md: 'row' }, rowGap: 2, columnGap: 2, maxWidth: '1200px', width: '100%', mx: 'auto' }}>
         <Grid item xs={12} md={7} lg={6} sx={{ textAlign: 'center', padding: '50px !important' }}>
           <Box sx={{ textAlign: 'left' }}>
-            <Typography variant="h5" sx={{ mb: 2 }}>
+            <Typography variant="h5" sx={{ mb: 2, '@media (max-width:600px)': { textAlign: 'left', } }}>
               <strong>Gruham</strong>
             </Typography>
           </Box>
@@ -162,7 +162,7 @@ const Contact: React.FC = () => {
         </Grid>
         <Grid item xs={12} md={5} sx={{ textAlign: 'center' }}>
           <Box>
-            <Typography variant="h5">
+            <Typography variant="h5" sx={{'@media (max-width:600px)': { textAlign: 'left', ml: 4}}}>
               <strong>Contact Us</strong>
             </Typography>
             <Box
@@ -180,29 +180,33 @@ const Contact: React.FC = () => {
               }}
             >
               <FormControl fullWidth required error={errors.name}>
-                <FormLabel sx={{ textAlign: 'left', color: 'black !important' }}>Your Name</FormLabel>
-                <TextField variant="outlined" fullWidth name="name" value={formData.name} onChange={handleChange} />
+                <FormLabel sx={{ textAlign: 'left', color: 'black !important','@media (max-width:600px)': { textAlign: 'left', ml: 4} }}>Your Name</FormLabel>
+                <TextField variant="outlined" sx={{ '@media (max-width:600px)': {'& .MuiInputBase-root': {
+              height: '40px', ml: 4, mr: 1}}}} fullWidth name="name" value={formData.name} onChange={handleChange} />
                 {errors.name && <FormHelperText sx={{ color: 'red' }}>This field is required</FormHelperText>}
               </FormControl>
               <FormControl fullWidth required error={errors.email}>
-                <FormLabel sx={{ textAlign: 'left', color: 'black !important' }}>Your Email</FormLabel>
-                <TextField variant="outlined" type="email" fullWidth name="email" value={formData.email} onChange={handleChange} />
-                {errors.email && <FormHelperText sx={{ color: 'red' }}>This field is required</FormHelperText>}
+                <FormLabel sx={{ textAlign: 'left', color: 'black !important', '@media (max-width:600px)': { textAlign: 'left', ml: 4} }}>Your Email</FormLabel>
+                <TextField variant="outlined" sx={{ '@media (max-width:600px)': {'& .MuiInputBase-root': {
+              height: '40px',  ml: 4}}}} type="email" fullWidth name="email" value={formData.email} onChange={handleChange} />
+                {errors.email && <FormHelperText sx={{ color: 'red', '@media (max-width:600px)': { textAlign: 'left', ml: 4} }}>This field is required</FormHelperText>}
               </FormControl>
               <FormControl fullWidth required error={errors.contactNo}>
-                <FormLabel sx={{ textAlign: 'left', color: 'black !important' }}>Contact No.</FormLabel>
-                <TextField variant="outlined" type="tel" fullWidth name="contactNo" value={formData.contactNo} onChange={handleChange} />
-                {errors.contactNo && <FormHelperText sx={{ color: 'red' }}>This field is required</FormHelperText>}
+                <FormLabel sx={{ textAlign: 'left', color: 'black !important', '@media (max-width:600px)': { textAlign: 'left', ml: 4} }}>Contact No.</FormLabel>
+                <TextField variant="outlined" sx={{ '@media (max-width:600px)': {'& .MuiInputBase-root': {
+              height: '40px',  ml: 4}}}} type="tel" fullWidth name="contactNo" value={formData.contactNo} onChange={handleChange} />
+                {errors.contactNo && <FormHelperText sx={{ color: 'red', '@media (max-width:600px)': { textAlign: 'left', ml: 4} }}>This field is required</FormHelperText>}
               </FormControl>
               <FormControl fullWidth required error={errors.city}>
-                <FormLabel sx={{ textAlign: 'left', color: 'black !important' }}>Your City</FormLabel>
-                <TextField variant="outlined" fullWidth name="city" value={formData.city} onChange={handleChange} />
-                {errors.city && <FormHelperText sx={{ color: 'red' }}>This field is required</FormHelperText>}
+                <FormLabel sx={{ textAlign: 'left', color: 'black !important', '@media (max-width:600px)': { textAlign: 'left', ml: 4} }}>Your City</FormLabel>
+                <TextField variant="outlined" sx={{ '@media (max-width:600px)': {'& .MuiInputBase-root': {
+              height: '40px',  ml: 4}}}}fullWidth name="city" value={formData.city} onChange={handleChange} />
+                {errors.city && <FormHelperText sx={{ color: 'red', '@media (max-width:600px)': { textAlign: 'left', ml: 4} }}>This field is required</FormHelperText>}
               </FormControl>
               <FormControl required error={errors.checkbox}>
-                <FormLabel sx={{ textAlign: 'left', color: 'black !important' }}>Select One</FormLabel>
+                <FormLabel sx={{ textAlign: 'left', color: 'black !important' , '@media (max-width:600px)': { textAlign: 'left', ml: 4}}}>Select One</FormLabel>
                 <FormGroup sx={{ display: 'flex', flexDirection: 'row' }}>
-                  <FormControlLabel
+                  <FormControlLabel sx={{'@media (max-width:600px)': { textAlign: 'left', ml: 4}}}
                     control={
                       <Checkbox
                         checked={plot.plot30x40}
@@ -212,7 +216,7 @@ const Contact: React.FC = () => {
                     }
                     label="30 x 40 plot"
                   />
-                  <FormControlLabel
+                  <FormControlLabel sx={{'@media (max-width:600px)': { textAlign: 'left', ml: 4}}}
                     control={
                       <Checkbox
                         checked={plot.largerArea}
@@ -224,13 +228,13 @@ const Contact: React.FC = () => {
                   />
                 </FormGroup>
                 {errors.checkbox && (
-                  <FormHelperText sx={{ color: 'red' }}>Please select at least one option</FormHelperText>
+                  <FormHelperText sx={{ color: 'red', '@media (max-width:600px)': { textAlign: 'left', ml: 4} }}>Please select at least one option</FormHelperText>
                 )}
               </FormControl>
               <FormControl fullWidth required error={errors.message}>
-                <FormLabel sx={{ textAlign: 'left', color: 'black !important' }}>Your Message</FormLabel>
-                <TextField variant="outlined" fullWidth multiline rows={6} name="message" value={formData.message} onChange={handleChange} />
-                {errors.message && <FormHelperText sx={{ color: 'red' }}>This field is required</FormHelperText>}
+                <FormLabel sx={{ textAlign: 'left', color: 'black !important', '@media (max-width:600px)': { textAlign: 'left', ml: 4} }}>Your Message</FormLabel>
+                <TextField variant="outlined" fullWidth multiline rows={6} sx={{'@media (max-width:600px)': { textAlign: 'left', ml: 4}}} name="message" value={formData.message} onChange={handleChange} />
+                {errors.message && <FormHelperText sx={{ color: 'red', '@media (max-width:600px)': { textAlign: 'left', ml: 4} }}>This field is required</FormHelperText>}
               </FormControl>
               <Button
                 variant="contained"
