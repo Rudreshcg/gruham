@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
             <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold', color: '#333' }}>
               CONNECT
             </Typography>
-            <Box sx={{ display: 'flex', justifyContent: isMobile ? 'center' : 'flex-start' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
               <IconButton href="https://www.facebook.com" target="_blank" rel="noopener" sx={{ color: '#666' }}>
                 <FacebookIcon />
               </IconButton>

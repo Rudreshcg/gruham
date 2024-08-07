@@ -114,21 +114,24 @@ const Contact: React.FC = () => {
 
   return (
     <Box sx={{ width: '100%', py: 9, backgroundColor: 'white', minHeight: '100vh' }}>
-      <Grid container spacing={2} justifyContent="center" alignItems="flex-start" sx={{ flexDirection: { xs: 'column', md: 'row' }, rowGap: 2, columnGap: 2, maxWidth: '1200px', width: '100%', mx: 'auto' }}>
-        <Grid item xs={12} md={7} lg={6} sx={{ textAlign: 'center', padding: '50px !important' }}>
-          <Box sx={{ textAlign: 'left' }}>
+      <Grid container spacing={2} justifyContent="center" alignItems="flex-start" sx={{ flexDirection: { xs: 'column', md: 'row' }, rowGap: 2, columnGap: 2, maxWidth: '1200px', width: '100%', mx: 'auto', flexWrap: 'nowrap' }}>
+        <Grid item xs={12} md={7} lg={6} sx={{ textAlign: 'center', px: isMobile ? 2 : 4, width: '100%' }}>
+          <Box>
             <Typography variant="h5" sx={{ mb: 2 }}>
               <strong>Gruham</strong>
             </Typography>
           </Box>
 
-          <Box sx={{ textAlign: 'left' }}>
+          <Box sx={{ textAlign: 'left', px: '50px' }}>
             <Box sx={{ height: '50px' }} aria-hidden="true" />
             <Box>
             </Box>
             <Box sx={{ mb: 2 }}>
               <Typography variant="body1" sx={{ mb: 2 }}>
                 <strong>Office Location:</strong>
+              </Typography>
+              <Typography variant="body2" sx={{ display: 'block' }}>
+              XF47+X6Q, Kannahalli, Bengaluru - 560060, Karnataka, INDIA
               </Typography>
             </Box>
             <Box sx={{ mb: 2 }}>
@@ -160,7 +163,7 @@ const Contact: React.FC = () => {
             </Box>
           </Box>
         </Grid>
-        <Grid item xs={12} md={5} sx={{ textAlign: 'center' }}>
+        <Grid item xs={12} md={5} sx={{ textAlign: 'center', px: isMobile ? 2 : 4, width: '100%' }}>
           <Box>
             <Typography variant="h5">
               <strong>Contact Us</strong>
@@ -173,10 +176,9 @@ const Contact: React.FC = () => {
                 flexDirection: 'column',
                 gap: 2,
                 maxWidth: 450,
-                margin: '0 auto',
                 pt: 6,
                 backgroundColor: 'white',
-                borderRadius: 1
+                p: isMobile ? 2 : 4
               }}
             >
               <FormControl fullWidth required error={errors.name}>
