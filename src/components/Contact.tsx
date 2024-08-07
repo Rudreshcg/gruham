@@ -114,7 +114,7 @@ const Contact: React.FC = () => {
 
   return (
     <Box sx={{ width: '100%', py: 9, backgroundColor: 'white', minHeight: '100vh' }}>
-      <Grid container spacing={2} justifyContent="center" alignItems="flex-start" sx={{ flexDirection: { xs: 'column', md: 'row' }, rowGap: 2, columnGap: 2, maxWidth: '1200px', width: '100%', mx: 'auto' }}>
+      <Grid container spacing={2} justifyContent="center" alignItems="flex-start" sx={{ flexDirection: { xs: 'column', md: 'row' }, rowGap: 2, columnGap: 2, maxWidth: '1200px', width: '100%', mx: 'auto', flexWrap: 'nowrap' }}>
         <Grid item xs={12} md={7} lg={6} sx={{ textAlign: 'center', px: isMobile ? 2 : 4, width: '100%' }}>
           <Box>
             <Typography variant="h5" sx={{ mb: 2 }}>
