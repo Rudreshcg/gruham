@@ -6,12 +6,12 @@ import "slick-carousel/slick/slick-theme.css";
 
 // Sample images for the carousel
 const images = [
-  'https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/best-interior-designers-in-bangalore.jpg.webp',
-  'https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp',
-  'https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/best-bangalore-architects.jpg.webp',
-  'https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp'
+  'https://www.ashwinarchitects.com/wp-content/uploads/2023/03/best-interior-designers-in-bangalore.jpg.webp',
+  'https://www.ashwinarchitects.com/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp',
+  'https://www.ashwinarchitects.com/wp-content/uploads/2023/03/best-bangalore-architects.jpg.webp',
+  'https://www.ashwinarchitects.com/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp'
 ];
-
+// https://ashwinarchitects.com/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg
 const Home: React.FC = () => {
   
 

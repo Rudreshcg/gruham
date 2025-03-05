@@ -16,8 +16,8 @@ const Projects: React.FC = () => {
               component="img"
               src={
                 index === 0 
-                ? "https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp"
-                : "https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp"
+                ? "https://www.ashwinarchitects.com/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp"
+                : "https://www.ashwinarchitects.com/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp"
               }
               alt={type}
               sx={{ 

@@ -2,42 +2,42 @@ import { Box, Grid, Typography, Card, CardContent, CardMedia, styled, Link } fro
 
 const projects = [
     {
-        image: "https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp",
+        image: "https://www.ashwinarchitects.com/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp",
         name: "Gruham",
         path: "/project1"
     },
     {
-        image: "https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp",
+        image: "https://www.ashwinarchitects.com/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp",
         name: "Project 2",
         path: "/project2"
     },
     {
-        image: "https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp",
+        image: "https://www.ashwinarchitects.com/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp",
         name: "Project 3",
         path: "/project3"
     },
     {
-        image: "https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp",
+        image: "https://www.ashwinarchitects.com/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp",
         name: "Project 4",
         path: "/project4"
     },
     {
-        image: "https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp",
+        image: "https://www.ashwinarchitects.com/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp",
         name: "Project 5",
         path: "/project5"
     },
     {
-        image: "https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp",
+        image: "https://www.ashwinarchitects.com/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp",
         name: "Project 6",
         path: "/project6"
     },
     {
-        image: "https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp",
+        image: "https://www.ashwinarchitects.com/wp-content/uploads/2023/03/best-architecture-firm-in-bangalore.jpg.webp",
         name: "Project 7",
         path: "/project7"
     },
     {
-        image: "https://www.ashwinarchitects.com/3/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp",
+        image: "https://www.ashwinarchitects.com/wp-content/uploads/2023/03/leading-residential-architects-in-bangalore.jpg.webp",
         name: "Project 8",
         path: "/project8"
     }
