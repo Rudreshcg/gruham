@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Rudreshcg/gruham.git/static/css/main.fe643598.css",
+    "main.js": "/Rudreshcg/gruham.git/static/js/main.2a07632f.js",
+    "static/media/Logo.jpeg": "/Rudreshcg/gruham.git/static/media/Logo.70daed30336137af8bed.jpeg",
+    "static/media/slick.svg": "/Rudreshcg/gruham.git/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Rudreshcg/gruham.git/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Rudreshcg/gruham.git/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Rudreshcg/gruham.git/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/Rudreshcg/gruham.git/index.html",
+    "main.fe643598.css.map": "/Rudreshcg/gruham.git/static/css/main.fe643598.css.map",
+    "main.2a07632f.js.map": "/Rudreshcg/gruham.git/static/js/main.2a07632f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe643598.css",
+    "static/js/main.2a07632f.js"
+  ]
+}
